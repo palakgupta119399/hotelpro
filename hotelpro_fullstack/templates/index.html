@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}HotelPro | Find your stay{% endblock %}{% block content %}
+<section class="hero"><div><div class="eyebrow">Your next stay starts here</div><h1>Find a stay that feels like <span style="color:#80f0d5">home.</span></h1><p>Discover comfortable rooms, transparent prices and an easy booking experience—all in one place.</p><a class="btn primary" href="{{ url_for('rooms') }}">Explore rooms →</a></div><div class="hero-art">🏨</div></section>
+<div class="section-head"><div><div class="eyebrow">Handpicked for you</div><h2>Popular rooms</h2><p class="muted">Comfortable spaces for every kind of trip.</p></div><a class="btn soft" href="{{ url_for('rooms') }}">View all rooms →</a></div>
+<div class="grid">{% for room in rooms %}{% include "_room_card.html" %}{% endfor %}</div>
+<section class="card" style="margin-top:28px"><div class="row"><div><h2 style="margin:0 0 8px">Your trip, made simpler</h2><p class="muted" style="margin:0">Book a room, manage reservations and keep your travel details together.</p></div><a class="btn primary" href="{{ url_for('rooms') }}">Find a room</a></div></section>{% endblock %}
